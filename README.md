@@ -7,7 +7,6 @@ how to add new events / logs
 https://docs.fivem.net/docs/scripting-reference/events/list/
 look at the code for example
 
-
 AddEventHandler('onResourceStop', function (resourceName)
     discordLog('**' .. resourceName .. '** has been stopped.', Config.resourceColor, 'resources')
 
