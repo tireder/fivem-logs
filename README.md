@@ -1,9 +1,6 @@
 # fivem-logs
 fivem to discord 
 docs:
-new update to logs tomorrow (adding new events)
-
-
 how to add new events / logs
 https://docs.fivem.net/docs/scripting-reference/events/list/
 look at the code for example
