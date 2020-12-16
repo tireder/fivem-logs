@@ -1,6 +1,6 @@
 author 'tired'
 description 'Server logs to Discord (/)'
-version '2.0.0'
+version '2.2.0'
 url 'http://tired-dev.xyz'
 
 -- Config

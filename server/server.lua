@@ -40,6 +40,13 @@ exports('discord', function(message, id, id2, color, channel)
     discordLog(_message, color, channel)
 end)
 
+-- Sending message to the All Logs channel and to the channel it has listed
+function discordLog(message, color, channel)
+  if Config.AllLogs then
+	PerformHttpRequest(Config.webhooks["all"], function(err, text, headers) end, 'POST', json.encode({username = Config.username, embeds = {{["color"] = color, ["author"] = {["name"] = Config.communtiyName,["icon_url"] = Config.communtiyLogo}, ["description"] = "".. message .."",["footer"] = {["text"] = "© tired-dev.xyz - "..os.date("%x %X %p"),["icon_url"] = "https://media.discordapp.net/attachments/780896268116819998/787787759506817054/tired.png",},}}, avatar_url = Config.avatar}), { ['Content-Type'] = 'application/json' })
+  end
+	PerformHttpRequest(Config.webhooks[channel], function(err, text, headers) end, 'POST', json.encode({username = Config.username, embeds = {{["color"] = color, ["author"] = {["name"] = Config.communtiyName,["icon_url"] = Config.communtiyLogo}, ["description"] = "".. message .."",["footer"] = {["text"] = "© tired-dev.xyz - "..os.date("%x %X %p"),["icon_url"] = "https://media.discordapp.net/attachments/780896268116819998/787787759506817054/tired.png",},}}, avatar_url = Config.avatar}), { ['Content-Type'] = 'application/json' })
+end
 
 -- Event Handlers
 
@@ -149,15 +156,6 @@ AddEventHandler('ClientDiscord', function(message, id, id2, color, channel)
 
    discordLog(_message, color,  channel)
 end)
---test
-
-AddEventHandler('explosionEvent', function()
-	local ids = ExtractIdentifiers(source)
-	local postal = getPlayerLocation(source)
-	if Config.postal then _postal = "\n**Nearest Postal:** ".. postal .."" else _postal = "" end
-	
-	if Config.explode then	discordLog('**' .. sanitize(GetPlayerName(source)) .. '**: ``' '``'''.. _postal ..'''''''', 'test')
-end)
 
 -- Send message when a resource is being stopped
 AddEventHandler('onResourceStop', function (resourceName)
@@ -170,8 +168,8 @@ AddEventHandler('onResourceStart', function (resourceName)
     discordLog('**' .. resourceName .. '** has been started.', Config.resourceColor, 'resources')
 end)
 
-RegisterServerEvent('TDlogs:GetIdentifiers')
-AddEventHandler('TDlogs:GetIdentifiers', function(src)
+RegisterServerEvent('TIlogs:GetIdentifiers')
+AddEventHandler('TIlogs:GetIdentifiers', function(src)
 	local ids = ExtractIdentifiers(src)
 	return ids
 end)
@@ -253,8 +251,8 @@ Citizen.CreateThread(
 								([[^1
 
 -------------------------------------------------------
-TD_logs
-UPDATE: %s AVAILABLE GO TO https://github.com/tireder/fivem-logs
+TI_logs
+UPDATE: %s AVAILABLE
 CHANGELOG: %s
 -------------------------------------------------------
 ^0]]):format(
@@ -264,7 +262,7 @@ CHANGELOG: %s
 							)
 						end
 					else
-						print('TD_logs unable to check version')
+						print('TI_logs unable to check version')
 					end
 				end,
 				'GET'

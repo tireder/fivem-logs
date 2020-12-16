@@ -1,13 +1,13 @@
 WeaponNames = {
-	[tostring(GetHashKey('WEAPON_UNARMED'))] = 'UNARMED',
-	[tostring(GetHashKey('GADGET_PARACHUTE'))] = 'PARACHUTE',
-	[tostring(GetHashKey('WEAPON_KNIFE'))] = 'KNIFE',
-	[tostring(GetHashKey('WEAPON_NIGHTSTICK'))] = 'NIGHTSTICK ',
-	[tostring(GetHashKey('WEAPON_HAMMER'))] = 'HAMMER',
-	[tostring(GetHashKey('WEAPON_BAT'))] = 'BAT',
-	[tostring(GetHashKey('WEAPON_CROWBAR'))] = 'CROWBAR',
-	[tostring(GetHashKey('WEAPON_GOLFCLUB'))] = 'GOLF CLUB',
-	[tostring(GetHashKey('WEAPON_BOTTLE'))] = 'BOTTLE',
+	[tostring(GetHashKey('WEAPON_UNARMED'))] = 'Unarmed',
+	[tostring(GetHashKey('GADGET_PARACHUTE'))] = 'Parachute',
+	[tostring(GetHashKey('WEAPON_KNIFE'))] = 'Knife',
+	[tostring(GetHashKey('WEAPON_NIGHTSTICK'))] = 'Nightstick',
+	[tostring(GetHashKey('WEAPON_HAMMER'))] = 'Hammer',
+	[tostring(GetHashKey('WEAPON_BAT'))] = 'Baseball Bat',
+	[tostring(GetHashKey('WEAPON_CROWBAR'))] = 'Crowbar',
+	[tostring(GetHashKey('WEAPON_GOLFCLUB'))] = 'Golf Club',
+	[tostring(GetHashKey('WEAPON_BOTTLE'))] = 'Bottle',
 	[tostring(GetHashKey('WEAPON_DAGGER'))] = 'Antique Cavalry Dagger',
 	[tostring(GetHashKey('WEAPON_HATCHET'))] = 'Hatchet',
 	[tostring(GetHashKey('WEAPON_KNUCKLE'))] = 'Knuckle Duster',
@@ -19,16 +19,16 @@ WeaponNames = {
 	[tostring(GetHashKey('WEAPON_PIPEWRENCH'))] = 'Wrench',
 	[tostring(GetHashKey('WEAPON_STONE_HATCHET'))] = 'Stone Hatchet',
 
-	[tostring(GetHashKey('WEAPON_PISTOL'))] = 'PISTOL',
-	[tostring(GetHashKey('WEAPON_PISTOL_MK2'))] = 'PISTOL Mk2',
-	[tostring(GetHashKey('WEAPON_COMBATPISTOL'))] = 'Combat PISTOL',
-	[tostring(GetHashKey('WEAPON_PISTOL50'))] = 'PISTOL .50	',
-	[tostring(GetHashKey('WEAPON_SNSPISTOL'))] = 'SNS PISTOL',
-	[tostring(GetHashKey('WEAPON_SNSPISTOL_MK2'))] = 'SNS PISTOL Mk2',
-	[tostring(GetHashKey('WEAPON_HEAVYPISTOL'))] = 'Heavy PISTOL',
-	[tostring(GetHashKey('WEAPON_VINTAGEPISTOL'))] = 'Vintage PISTOL',
-	[tostring(GetHashKey('WEAPON_MARKSMANPISTOL'))] = 'Marksman PISTOL',
-	[tostring(GetHashKey('WEAPON_REVOLVER'))] = 'Revolver',
+	[tostring(GetHashKey('WEAPON_PISTOL'))] = 'Pistol',
+	[tostring(GetHashKey('WEAPON_PISTOL_MK2'))] = 'Pistol Mk2',
+	[tostring(GetHashKey('WEAPON_COMBATPISTOL'))] = 'Combat Pistol',
+	[tostring(GetHashKey('WEAPON_PISTOL50'))] = 'Pistol .50	',
+	[tostring(GetHashKey('WEAPON_SNSPISTOL'))] = 'SNS Pistol',
+	[tostring(GetHashKey('WEAPON_SNSPISTOL_MK2'))] = 'SNS Pistol Mk2',
+	[tostring(GetHashKey('WEAPON_HEAVYPISTOL'))] = 'Heavy Pistol',
+	[tostring(GetHashKey('WEAPON_VINTAGEPISTOL'))] = 'Vintage Pistol',
+	[tostring(GetHashKey('WEAPON_MARKSMANPISTOL'))] = 'Marksman Pistol',
+	[tostring(GetHashKey('WEAPON_REVOLVER'))] = 'Heavy Revolver',
 	[tostring(GetHashKey('WEAPON_REVOLVER_MK2'))] = 'Heavy Revolver Mk2',
 	[tostring(GetHashKey('WEAPON_DOUBLEACTION'))] = 'Double-Action Revolver',
 	[tostring(GetHashKey('WEAPON_APPISTOL'))] = 'AP Pistol',
@@ -380,9 +380,9 @@ function IsVK(Weapon)
 end
 
 
---Debug shizzels :D
+--Debug
 function ShowDebug(text)
 	SetNotificationTextEntry("STRING")
-	AddTextComponentSubstringPlayerName("~b~TD_logs Debug:~s~\n"..text)
+	AddTextComponentSubstringPlayerName("~b~TI_logs Debug:~s~\n"..text)
 	DrawNotification(true, true)
 end
