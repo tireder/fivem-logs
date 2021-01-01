@@ -54,9 +54,9 @@ Citizen.CreateThread(function()
 			end
 			
 			if DeathReason == 'committed suicide' or DeathReason == 'died' then
-				TriggerServerEvent('DiscordBot:plaGTHBRByerDied', GetPlayerName(PlayerId()) .. ' ' .. DeathReason .. '.', Weapon)
+				TriggerServerEvent('DiscordBot:playerDied', GetPlayerName(PlayerId()) .. ' ' .. DeathReason .. '.', Weapon)
 			else
-				TriggerServerEvent('DiscordBot:plaGTHBRByerDied', GetPlayerName(Killer) .. ' ' .. DeathReason .. ' ' .. GetPlayerName(PlayerId()) .. '.', Weapon)
+				TriggerServerEvent('DiscordBot:playerDied', GetPlayerName(Killer) .. ' ' .. DeathReason .. ' ' .. GetPlayerName(PlayerId()) .. '.', Weapon)
 			end
 			Killer = nil
 			DeathReason = nil
