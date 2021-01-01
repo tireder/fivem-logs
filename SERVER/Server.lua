@@ -9,6 +9,7 @@
 -- DO NOT EDIT THESE! -- DO NOT EDIT THESE! -- DO NOT EDIT THESE! -- DO NOT EDIT THESE! -- DO NOT EDIT THESE!
 -- DO NOT EDIT THESE! -- DO NOT EDIT THESE! -- DO NOT EDIT THESE! -- DO NOT EDIT THESE! -- DO NOT EDIT THESE!
 
+
 -- Error Check
 if DiscordWebhookSystemInfos == nil and DiscordWebhookKillinglogs == nil and DiscordWebhookChat == nil then
 	local Content = LoadResourceFile(GetCurrentResourceName(), 'config.lua')
@@ -55,8 +56,8 @@ AddEventHandler('playerDropped', function(Reason)
 end)
 
 -- Killing Log
-RegisterServerEvent('DiscordBot:plaGTHBRByerDied')
-AddEventHandler('DiscordBot:plaGTHBRByerDied', function(Message, Weapon)
+RegisterServerEvent('DiscordBot:playerDied')
+AddEventHandler('DiscordBot:playerDied', function(Message, Weapon)
 	local date = os.date('*t')
 	
 	if date.day < 10 then date.day = '0' .. tostring(date.day) end
